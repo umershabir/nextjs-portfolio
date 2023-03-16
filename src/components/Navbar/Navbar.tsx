@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className={styles.navLinks}>
         <ul>
           <li>
-            <Link href={"/blog"}>Blogs</Link>
+            <Link href={"/blogs"}>Blogs</Link>
           </li>
           <li>
             <Link href={"/projects"}>Projects</Link>
