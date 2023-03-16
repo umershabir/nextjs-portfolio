@@ -4,7 +4,9 @@ export default function Navbar() {
   return (
     <nav className={styles.nav}>
       <div className={styles.title}>
-        <h1 style={{ fontWeight: "600", fontSize: "30px" }}>Umer Shabir</h1>
+        <Link href={"/"} style={{ fontWeight: "600", fontSize: "30px" }}>
+          Umer Shabir
+        </Link>
         <p>Dark</p>
       </div>
       <div className={styles.navLinks}>
@@ -18,10 +20,17 @@ export default function Navbar() {
         </ul>
         <ul>
           <li>
-            <a href="/">GitHub</a>
+            <a href="https://github.com/umershabir" target={"_blank"}>
+              GitHub
+            </a>
           </li>
           <li>
-            <a href="/">Youtube</a>
+            <a
+              href="https://www.youtube.com/channel/UCtnIzSE5BDjABTqmvpbgPCQ"
+              target={"_blank"}
+            >
+              Youtube
+            </a>
           </li>
         </ul>
       </div>

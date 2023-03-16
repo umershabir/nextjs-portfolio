@@ -12,13 +12,15 @@
       display: flex;
       column-gap: 1rem;
       margin: 2rem 0 1rem 0;
+      padding: 0;
       li {
         a {
           color: #5f6c80;
+          text-decoration: none;
           &:hover {
-            transition: all ease-out 0.1s;
-            border-bottom: 2px solid #000;
+            text-decoration: underline;
             color: #000;
+            transition: all ease-out 0.2s;
           }
         }
       }
