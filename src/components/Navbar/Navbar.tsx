@@ -21,6 +21,11 @@ export default function Navbar() {
         <ul>
           <li>
             <a href="https://github.com/umershabir" target={"_blank"}>
+              Linkedin
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/umershabir" target={"_blank"}>
               GitHub
             </a>
           </li>

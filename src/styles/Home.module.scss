@@ -1,0 +1,33 @@
+@import "../styles/variables";
+.intro {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.videoBtn {
+  color: #754ec1;
+  font-size: 1.25rem;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.latest {
+  display: flex;
+  flex-direction: column;
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $divider;
+    align-items: center;
+  }
+  .posts {
+    margin: 2rem 0;
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+    }
+  }
+}
