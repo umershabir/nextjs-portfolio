@@ -14,8 +14,8 @@ export default function Home() {
         <section className={styles.intro}>
           <h2>Hey!</h2>
           <p className="primaryText">
-            I'm Umer, JavaScript developer at Terafort based in Pakistan. I work
-            to bring life into ideas.{" "}
+            I&apos;m Umer, JavaScript developer at Terafort based in Pakistan. I
+            work to bring life into ideas. Let&apos;s make something great.{" "}
             <span className={styles.videoBtn}>see video description</span>
           </p>
         </section>
