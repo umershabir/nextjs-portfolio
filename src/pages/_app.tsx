@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import type { AppProps } from "next/app";
 import { createContext } from "react";
+// creating context for theming,
 // definig web font in next js for prerendering
 const inter = Inter({
   weight: ["400", "500", "600", "700"],

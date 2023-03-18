@@ -1,0 +1,14 @@
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #cbd5e0;
+  padding-top: 1rem;
+}
+/*# sourceMappingURL=footer.module.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,MAAM,EAAE,MAAM;CACf;;AACD,AAAA,MAAM,CAAC;EACL,MAAM,EAAE,MAAM;CAMf;;AAPD,AAEE,MAFI,CAEJ,EAAE,CAAC;EACD,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,OAAO,EAAE,MAAM;CAChB",
+    "sources": [
+        "Blogs.module.scss"
+    ],
+    "names": [],
+    "file": "Blogs.module.css"
+}

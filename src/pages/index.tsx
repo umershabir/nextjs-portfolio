@@ -3,7 +3,8 @@ import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
-export default function Home(props: {}) {
+import matter from "gray-matter";
+export default function Home(props: any) {
   console.log(props);
   return (
     <>
@@ -31,14 +32,16 @@ export default function Home(props: {}) {
           </div>
           <div className={styles.posts}>
             <ul>
-              {["a", "b"].map((item, index) => (
-                <li key={index}>
-                  <Link href={"/"} className="primaryText">
-                    some project
-                  </Link>
-                  <p className="secondaryText">02-03-2023</p>
-                </li>
-              ))}
+              {props.posts.map(
+                (item: { slug: string; date: string }, index: number) => (
+                  <li key={index}>
+                    <Link href={"/"} className="primaryText">
+                      {item.slug}
+                    </Link>
+                    <p className="secondaryText">02-03-2023</p>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </section>
@@ -67,10 +70,21 @@ export default function Home(props: {}) {
 }
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join("public", "sources", "posts"));
-  console.log(files);
+  const posts = files.map((filename) => {
+    const slug = filename.replace(".md", "");
+    const markdownWithMeta = fs.readFileSync(
+      path.join("public", "sources", "posts", filename),
+      "utf-8"
+    );
+    const { data: frontmatter } = matter(markdownWithMeta);
+    return {
+      slug,
+      frontmatter,
+    };
+  });
   return {
     props: {
-      posts: "the posts",
+      posts: posts,
     },
   };
 }
