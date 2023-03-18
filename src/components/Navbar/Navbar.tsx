@@ -1,6 +1,10 @@
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export default function Navbar() {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <nav className={styles.nav}>
       <div className={styles.title}>
@@ -12,10 +16,20 @@ export default function Navbar() {
       <div className={styles.navLinks}>
         <ul>
           <li>
-            <Link href={"/blogs"}>Blogs</Link>
+            <Link
+              href={"/blogs"}
+              className={pathname == "/blogs" ? styles.active : undefined}
+            >
+              Blogs
+            </Link>
           </li>
           <li>
-            <Link href={"/projects"}>Projects</Link>
+            <Link
+              href={"/projects"}
+              className={pathname == "/projects" ? styles.active : undefined}
+            >
+              Projects
+            </Link>
           </li>
         </ul>
         <ul>

@@ -1,0 +1,13 @@
+.blogSec {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem 0;
+}
+.posts {
+  margin: 2rem 0;
+  ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+}

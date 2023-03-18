@@ -1,7 +1,10 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
-export default function Home() {
+import fs from "fs";
+import path from "path";
+export default function Home(props: {}) {
+  console.log(props);
   return (
     <>
       <Head>
@@ -61,4 +64,13 @@ export default function Home() {
       </main>
     </>
   );
+}
+export async function getStaticProps() {
+  const files = fs.readdirSync(path.join("public", "sources", "posts"));
+  console.log(files);
+  return {
+    props: {
+      posts: "the posts",
+    },
+  };
 }

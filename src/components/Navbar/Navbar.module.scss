@@ -13,6 +13,11 @@
       margin: 2rem 0 1rem 0;
 
       li {
+        .active {
+          text-decoration: underline;
+          color: #000;
+          transition: all ease-out 0.2s;
+        }
         a {
           color: #5f6c80;
           text-decoration: none;
