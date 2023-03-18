@@ -33,12 +33,18 @@ export default function Home(props: any) {
           <div className={styles.posts}>
             <ul>
               {props.posts.map(
-                (item: { slug: string; date: string }, index: number) => (
+                (
+                  item: {
+                    slug: string;
+                    frontmatter: { title: string; date: string };
+                  },
+                  index: number
+                ) => (
                   <li key={index}>
                     <Link href={"/"} className="primaryText">
                       {item.slug}
                     </Link>
-                    <p className="secondaryText">02-03-2023</p>
+                    <p className="secondaryText">{item.frontmatter.date}</p>
                   </li>
                 )
               )}
