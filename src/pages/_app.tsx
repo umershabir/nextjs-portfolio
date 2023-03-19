@@ -19,16 +19,9 @@ const inter = Inter({
 });
 // main app component
 export default function App({ Component, pageProps }: AppProps) {
-  const [data, setData] = useState({
-    posts: [],
-    projects: [],
-  });
-  const { posts, projects } = data;
-  const update = (posts: [], projects: []) => {
-    setData({
-      posts,
-      projects,
-    });
+  const [theme, setTheme] = useState("Dark");
+  const themeUpdate = () => {
+    setTheme((prev) => (prev == "Dark" ? "Light" : "Dark"));
   };
   return (
     <>
@@ -36,14 +29,29 @@ export default function App({ Component, pageProps }: AppProps) {
         html {
           font-family: ${inter.style.fontFamily};
           font-weight: 400;
+          background-color: ${theme == "Light" ? "#1A202C" : "#fff"};
+          color: ${theme == "Light" ? "#fff" : "#000"} !important;
+        }
+        a {
+          transition: all ease 0.4s;
+          color: ${theme == "Light" ? "#8094AF" : "#5f6c80"};
+        }
+        a:hover {
+          transition: all ease 0.4s;
+          color: ${theme == "Light" ? "#fff" : "#000"};
+        }
+        button {
+          color: ${theme == "Light" ? "#8094AF" : "#5f6c80"};
+        }
+        button:hover {
+          transition: all ease 0.2s;
+          color: ${theme == "Light" ? "#fff" : "#000"};
         }
       `}</style>
       <ContextProvider
         value={{
-          posts,
-          projects,
-          theme: false,
-          update,
+          theme,
+          themeUpdate,
         }}
       >
         <Container>

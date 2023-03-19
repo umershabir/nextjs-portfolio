@@ -1,23 +1,29 @@
+import { useState } from "react";
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import { useContext } from "react";
+import { ContextConsumer } from "../ContextAPI";
 export default function Navbar() {
+  // const [theme, setTheme] = useState("Dark");
   const pathname = usePathname();
+  const { themeUpdate, theme } = useContext(ContextConsumer);
+
+  themeUpdate();
   return (
     <nav className={styles.nav}>
       <div className={styles.title}>
         <Link href={"/"} style={{ fontWeight: "600", fontSize: "30px" }}>
           Umer Shabir
         </Link>
-        <p>Dark</p>
+        <button onClick={() => themeUpdate()}>{theme}</button>
       </div>
       <div className={styles.navLinks}>
         <ul>
           <li>
             <Link
               href={"/blogs"}
-              className={pathname == "/blogs" ? styles.active : undefined}
+              className={pathname.match(/blogs/) ? styles.active : undefined}
             >
               Blogs
             </Link>
@@ -25,7 +31,7 @@ export default function Navbar() {
           <li>
             <Link
               href={"/projects"}
-              className={pathname == "/projects" ? styles.active : undefined}
+              className={pathname.match(/projects/) ? styles.active : undefined}
             >
               Projects
             </Link>
