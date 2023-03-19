@@ -2,15 +2,17 @@ import styles from "@/styles/Blogs.module.scss";
 import Link from "next/link";
 import { useContext } from "react";
 import { ContextConsumer } from "@/components/ContextAPI";
-export default function Blogs() {
-  let { posts } = useContext(ContextConsumer);
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+export default function Blogs(props: any) {
   return (
     <section className={styles.blogSec}>
       <div className={styles.blogs}>
         <h2>Blogs</h2>
         <div className={styles.posts}>
           <ul>
-            {posts.map(
+            {props.posts.map(
               (
                 item: {
                   slug: string;
@@ -45,4 +47,24 @@ export default function Blogs() {
       </div>
     </section>
   );
+}
+export async function getStaticProps() {
+  const postFiles = fs.readdirSync(path.join("src", "posts"));
+  const posts = postFiles.map((filename) => {
+    const slug = filename.replace(".md", "");
+    const markdownWithMeta = fs.readFileSync(
+      path.join("src", "posts", filename),
+      "utf-8"
+    );
+    const { data: frontmatter } = matter(markdownWithMeta);
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+  return {
+    props: {
+      posts: posts,
+    },
+  };
 }

@@ -33,7 +33,7 @@ export default function Navbar() {
         </ul>
         <ul>
           <li>
-            <a href="https://github.com/umershabir" target={"_blank"}>
+            <a href="https://www.linkedin.com/in/umershabir/" target={"_blank"}>
               Linkedin
             </a>
           </li>

@@ -8,11 +8,7 @@ import matter from "gray-matter";
 import { useContext } from "react";
 import { ContextProvider, ContextConsumer } from "@/components/ContextAPI";
 export default function Home(props: any) {
-  let { update } = useContext(ContextConsumer);
   // console.log(data);
-  useEffect(() => {
-    update(props.posts, props.projects);
-  }, []);
   return (
     <>
       <Head>

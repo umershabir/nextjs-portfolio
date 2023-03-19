@@ -2,9 +2,11 @@ import Link from "next/link";
 import styles from "@/styles/Blogs.module.scss";
 import { useContext } from "react";
 import { ContextConsumer } from "@/components/ContextAPI";
-export default function Projects() {
-  let { projects } = useContext(ContextConsumer);
-
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+export default function Projects(props: any) {
+  const { projects } = props;
   return (
     <section className={styles.blogSec}>
       <div className={styles.blogs}>
@@ -25,4 +27,25 @@ export default function Projects() {
       </div>
     </section>
   );
+}
+
+export async function getStaticProps() {
+  const projectFiles = fs.readdirSync(path.join("src", "projects"));
+  const projects = projectFiles.map((filename) => {
+    const slug = filename.replace(".md", "");
+    const markdownWithMeta = fs.readFileSync(
+      path.join("src", "projects", filename),
+      "utf-8"
+    );
+    const { data: frontmatter } = matter(markdownWithMeta);
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+  return {
+    props: {
+      projects: projects,
+    },
+  };
 }
