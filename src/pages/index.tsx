@@ -42,7 +42,7 @@ export default function Home(props: any) {
                 ) => (
                   <li key={index}>
                     <Link href={"/"} className="primaryText">
-                      {item.slug}
+                      {item.frontmatter.title}
                     </Link>
                     <p className="secondaryText">{item.frontmatter.date}</p>
                   </li>
