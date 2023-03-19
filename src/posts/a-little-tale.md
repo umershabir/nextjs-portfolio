@@ -8,8 +8,6 @@ cover_image: "/images/posts/a-little-tale.jpg"
 
 This is a little tale of Zachariah's son Yahya (John) (Peace and blessings) who was the companion of Jesus. I read this in Qasasul Ambia (Stories of Prophets) about 2 years ago. After reading, I spent some time pondering on this and discovered some of the valuable things which I want to share in this blog.
 
-### A little tale
-
 Some kids between 8 to 10 were playing, one of them asked Yahya (peace and blessings) who was crossing from 'Hey Yahya why don't you join us?'
 'I am not meant to play, I am for something else'
 

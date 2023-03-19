@@ -15,9 +15,10 @@ export default function PostPage(props: any) {
         <title>{props.slug}</title>
       </Head>
       <div className={styles.postPage}>
-        <Link href="/blogs" className={styles.postLink}>
+        <Link href="/projects" className={styles.postLink}>
           {"<-back"}
         </Link>
+
         <div className={styles.postIntro}>
           <Image
             src={props.frontmatter.cover_image}
@@ -36,7 +37,7 @@ export default function PostPage(props: any) {
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("src", "posts"));
+  const files = fs.readdirSync(path.join("src", "projects"));
   const paths = files.map((filename) => ({
     params: {
       slug: filename.replace(".md", ""),
@@ -54,7 +55,7 @@ export async function getStaticProps({
   params: { slug: string };
 }) {
   const markdownWithMeta = fs.readFileSync(
-    path.join("src", "posts", slug + ".md"),
+    path.join("src", "projects", slug + ".md"),
     "utf-8"
   );
   const { data: frontmatter, content } = matter(markdownWithMeta);

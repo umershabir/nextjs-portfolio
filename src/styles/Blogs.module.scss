@@ -1,6 +1,7 @@
 .blogSec {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1fr, 1fr;
+  grid-template-columns: 1fr, 1fr;
   margin: 4rem 0;
 }
 .posts {
@@ -9,5 +10,21 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.5rem;
+  }
+}
+.postPage {
+  margin: 4rem 0;
+}
+.postLink {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.postIntro {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  img {
+    margin: 0 auto;
   }
 }

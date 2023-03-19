@@ -9,14 +9,20 @@ export default function Projects(props: any) {
   const { projects } = props;
   return (
     <section className={styles.blogSec}>
+      <Link href="/" className={styles.postLink}>
+        {"<-back"}
+      </Link>
       <div className={styles.blogs}>
         <h2>Projects</h2>
         <div className={styles.posts}>
           <ul>
             {projects.map(
-              (item: { frontmatter: { title: string } }, index: number) => (
+              (
+                item: { slug: string; frontmatter: { title: string } },
+                index: number
+              ) => (
                 <li key={index}>
-                  <Link href={"/"} className="primaryText">
+                  <Link href={"/projects/" + item.slug} className="primaryText">
                     {item.frontmatter.title}
                   </Link>
                 </li>

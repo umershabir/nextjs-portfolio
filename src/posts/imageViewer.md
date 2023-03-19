@@ -12,13 +12,13 @@ In this is tutorial I will explain how can we build a simple custom image viewer
 The library I am going to use in this tutorial is react modal, so let's start.
 I am assuming this that all the boiler plates to get start with react you have done.
 
-## Step 1:
+### Step 1:
 
 First I am going to install react modal with this command.
 
 > npm install react-modal
 
-## Step 2:
+### Step 2:
 
 Next I am going to render a clickable component, It could be anything a text or a image which can be click and view the image or a link having multiple images to view, In my case there are multiple images to view I will render a simple clickable text to view images Which I will pass as a prop.
 
@@ -28,7 +28,7 @@ export default function ImageViewer() {
 }
 ```
 
-## Step 3:
+### Step 3:
 
 Next I am going to make this line clickable by applying onClick function and link it to the react modal.
 
@@ -50,14 +50,14 @@ const openModal => () {
   }
 ```
 
-## Step 4:
+### Step 4:
 
 Next step is all about the view how you want to open and view your react modal, in my case it will look like this.  
 ![post-image](/images/posts/imageview.png)  
 you can check this JSX in github,  
 [Tutorial code at github](https://github.com/umershabir/custom-image-viewer)
 
-## Step 5:
+### Step 5:
 
 let's render our images, In my case Images are coming from an API that's why I passed that in a prop, but for the sake of this tutorial I will statically pass an array of some random images.
 
@@ -101,11 +101,11 @@ and pass the index number of image to the main hero image with array index to ge
 />
 ```
 
-## Step 6: Forward and Reverse the images
+### Step 6: Forward and Reverse the images
 
 To view forward image and reverse I just creadet two simple buttons with fontawesome icons and functioned them onclick to just step one array index number or step back array index number check out this.
 
-##### Step Back
+#### Step Back
 
 ```javascript
 <button
@@ -117,7 +117,7 @@ To view forward image and reverse I just creadet two simple buttons with fontawe
 </button>
 ```
 
-##### Step Forward
+#### Step Forward
 
 ```javascript
 <button

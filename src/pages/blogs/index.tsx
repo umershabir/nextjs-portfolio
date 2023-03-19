@@ -8,6 +8,9 @@ import matter from "gray-matter";
 export default function Blogs(props: any) {
   return (
     <section className={styles.blogSec}>
+      <Link href="/" className={styles.postLink}>
+        {"<-back"}
+      </Link>
       <div className={styles.blogs}>
         <h2>Blogs</h2>
         <div className={styles.posts}>
