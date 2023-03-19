@@ -16,15 +16,15 @@ export default function PostPage(props: any) {
         <div className="">
           <div>
             <div className="">
-              {/* <Image
-               src={frontmatter.cover_image}
-                 alt="blog-image"
-                 width={500}
-                 height={250}
-               />
-               <h1>{frontmatter.title}</h1>
-              <small>{frontmatter.date}</small>
-               <small>{frontmatter.tags}</small> */}
+              <Image
+                src={props.frontmatter.cover_image}
+                alt="blog-image"
+                width={500}
+                height={250}
+              />
+              <h1>{props.frontmatter.title}</h1>
+              <small>{props.frontmatter.date}</small>
+              <small>{props.frontmatter.tags}</small>
             </div>
             <ReactMarkdown components={CodeBlock}>
               {props.content}
@@ -49,7 +49,11 @@ export async function getStaticPaths() {
   };
 }
 // getstatic props
-export async function getStaticProps({ params: { slug } }) {
+export async function getStaticProps({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
   const markdownWithMeta = fs.readFileSync(
     path.join("src", "posts", slug + ".md"),
     "utf-8"
