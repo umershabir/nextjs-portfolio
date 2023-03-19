@@ -60,13 +60,15 @@ export default function Home(props: any) {
           </div>
           <div className={styles.posts}>
             <ul>
-              {["a", "b"].map((item, index) => (
-                <li key={index}>
-                  <Link href={"/"} className="primaryText">
-                    some project
-                  </Link>
-                </li>
-              ))}
+              {props.projects.map(
+                (item: { frontmatter: { title: string } }, index: number) => (
+                  <li key={index}>
+                    <Link href={"/"} className="primaryText">
+                      {item.frontmatter.title}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </section>
@@ -75,11 +77,24 @@ export default function Home(props: any) {
   );
 }
 export async function getStaticProps() {
-  const files = fs.readdirSync(path.join("public", "sources", "posts"));
-  const posts = files.map((filename) => {
+  const postFiles = fs.readdirSync(path.join("src", "posts"));
+  const projectFiles = fs.readdirSync(path.join("src", "projects"));
+  const posts = postFiles.map((filename) => {
     const slug = filename.replace(".md", "");
     const markdownWithMeta = fs.readFileSync(
-      path.join("public", "sources", "posts", filename),
+      path.join("src", "posts", filename),
+      "utf-8"
+    );
+    const { data: frontmatter } = matter(markdownWithMeta);
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+  const projects = projectFiles.map((filename) => {
+    const slug = filename.replace(".md", "");
+    const markdownWithMeta = fs.readFileSync(
+      path.join("src", "projects", filename),
       "utf-8"
     );
     const { data: frontmatter } = matter(markdownWithMeta);
@@ -91,6 +106,7 @@ export async function getStaticProps() {
   return {
     props: {
       posts: posts,
+      projects: projects,
     },
   };
 }
