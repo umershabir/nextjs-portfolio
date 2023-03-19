@@ -1,11 +1,18 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { useContext } from "react";
+import { ContextProvider, ContextConsumer } from "@/components/ContextAPI";
 export default function Home(props: any) {
-  console.log(props);
+  let { update } = useContext(ContextConsumer);
+  // console.log(data);
+  useEffect(() => {
+    update(props.posts, props.projects);
+  }, []);
   return (
     <>
       <Head>
