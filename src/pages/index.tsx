@@ -44,7 +44,7 @@ export default function Home(props: any) {
                   index: number
                 ) => (
                   <li key={index}>
-                    <Link href={"/"} className="primaryText">
+                    <Link href={"/blogs/" + item.slug} className="primaryText">
                       {item.frontmatter.title}
                     </Link>
                     <p className="secondaryText">{item.frontmatter.date}</p>

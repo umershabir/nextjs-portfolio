@@ -21,7 +21,7 @@ export default function Blogs(props: any) {
                 index: number
               ) => (
                 <li key={index}>
-                  <Link href={"/"} className="primaryText">
+                  <Link href={"/blogs/" + item.slug} className="primaryText">
                     {item.frontmatter.title}
                   </Link>
                   <p className="secondaryText">{item.frontmatter.date}</p>
@@ -31,7 +31,7 @@ export default function Blogs(props: any) {
           </ul>
         </div>
       </div>
-      <div className={styles.blogs}>
+      {/* <div className={styles.blogs}>
         <h2>Tags(1)</h2>
         <div className={styles.posts}>
           <ul>
@@ -44,7 +44,7 @@ export default function Blogs(props: any) {
             ))}
           </ul>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
