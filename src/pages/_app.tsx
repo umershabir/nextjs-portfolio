@@ -19,8 +19,8 @@ const inter = Inter({
 });
 // main app component
 export default function App({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState("Dark");
-  const themeUpdate = () => {
+  const [theme, setTheme] = useState<string>("Dark");
+  const themeUpdate: any = () => {
     setTheme((prev) => (prev == "Dark" ? "Light" : "Dark"));
   };
   return (

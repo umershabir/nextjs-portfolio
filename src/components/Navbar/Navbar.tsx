@@ -7,7 +7,7 @@ import { ContextConsumer } from "../ContextAPI";
 export default function Navbar() {
   // const [theme, setTheme] = useState("Dark");
   const pathname = usePathname();
-  const { themeUpdate, theme }: { themeUpdate: any; theme: any } =
+  const { themeUpdate, theme }: { themeUpdate: any; theme: string } =
     useContext(ContextConsumer);
   themeUpdate();
   return (
