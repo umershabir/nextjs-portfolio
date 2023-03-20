@@ -47,6 +47,9 @@ export default function App({ Component, pageProps }: AppProps) {
           transition: all ease 0.2s;
           color: ${theme == "Light" ? "#fff" : "#000"};
         }
+        p {
+          color: ${theme == "Light" ? "#8094AF" : "#5f6c80"};
+        }
       `}</style>
       <ContextProvider
         value={{

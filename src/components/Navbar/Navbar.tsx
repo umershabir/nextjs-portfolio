@@ -7,13 +7,20 @@ import { ContextConsumer } from "../ContextAPI";
 export default function Navbar() {
   // const [theme, setTheme] = useState("Dark");
   const pathname = usePathname();
-  const { themeUpdate, theme } = useContext(ContextConsumer);
-
+  const { themeUpdate, theme }: { themeUpdate: any; theme: any } =
+    useContext(ContextConsumer);
   themeUpdate();
   return (
     <nav className={styles.nav}>
       <div className={styles.title}>
-        <Link href={"/"} style={{ fontWeight: "600", fontSize: "30px" }}>
+        <Link
+          href={"/"}
+          style={{
+            fontWeight: "600",
+            fontSize: "30px",
+            color: theme == "Dark" ? "#000" : "#fff",
+          }}
+        >
           Umer Shabir
         </Link>
         <button onClick={() => themeUpdate()}>{theme}</button>
@@ -58,6 +65,11 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+      <style jsx>{`
+        .active {
+          color: #000 !important;
+        }
+      `}</style>
     </nav>
   );
 }
