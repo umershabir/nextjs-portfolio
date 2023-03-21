@@ -1,37 +1,44 @@
 import Link from "next/link";
 import styles from "@/styles/Blogs.module.scss";
-import { useContext } from "react";
-import { ContextConsumer } from "@/components/ContextAPI";
+import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 export default function Projects(props: any) {
   const { projects } = props;
   return (
-    <section className={styles.blogSec}>
-      <Link href="/" className={styles.postLink}>
-        {"<-back"}
-      </Link>
-      <div className={styles.blogs}>
-        <h2>Projects</h2>
-        <div className={styles.posts}>
-          <ul>
-            {projects.map(
-              (
-                item: { slug: string; frontmatter: { title: string } },
-                index: number
-              ) => (
-                <li key={index}>
-                  <Link href={"/projects/" + item.slug} className="primaryText">
-                    {item.frontmatter.title}
-                  </Link>
-                </li>
-              )
-            )}
-          </ul>
+    <>
+      <Head>
+        <title>Umer Shabir-Projects</title>
+      </Head>
+      <section className={styles.blogSec}>
+        <Link href="/" className={styles.postLink}>
+          {"<-back"}
+        </Link>
+        <div className={styles.blogs}>
+          <h2>Projects</h2>
+          <div className={styles.posts}>
+            <ul>
+              {projects.map(
+                (
+                  item: { slug: string; frontmatter: { title: string } },
+                  index: number
+                ) => (
+                  <li key={index}>
+                    <Link
+                      href={"/projects/" + item.slug}
+                      className="primaryText"
+                    >
+                      {item.frontmatter.title}
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

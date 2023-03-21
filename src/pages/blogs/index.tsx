@@ -1,40 +1,43 @@
 import styles from "@/styles/Blogs.module.scss";
+import Head from "next/head";
 import Link from "next/link";
-import { useContext } from "react";
-import { ContextConsumer } from "@/components/ContextAPI";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 export default function Blogs(props: any) {
   return (
-    <section className={styles.blogSec}>
-      <Link href="/" className={styles.postLink}>
-        {"<-back"}
-      </Link>
-      <div className={styles.blogs}>
-        <h2>Blogs</h2>
-        <div className={styles.posts}>
-          <ul>
-            {props.posts.map(
-              (
-                item: {
-                  slug: string;
-                  frontmatter: { title: string; date: string };
-                },
-                index: number
-              ) => (
-                <li key={index}>
-                  <Link href={"/blogs/" + item.slug} className="primaryText">
-                    {item.frontmatter.title}
-                  </Link>
-                  <p className="secondaryText">{item.frontmatter.date}</p>
-                </li>
-              )
-            )}
-          </ul>
+    <>
+      <Head>
+        <title>Umer Shabir-Blogs</title>
+      </Head>
+      <section className={styles.blogSec}>
+        <Link href="/" className={styles.postLink}>
+          {"<-back"}
+        </Link>
+        <div className={styles.blogs}>
+          <h2>Blogs</h2>
+          <div className={styles.posts}>
+            <ul>
+              {props.posts.map(
+                (
+                  item: {
+                    slug: string;
+                    frontmatter: { title: string; date: string };
+                  },
+                  index: number
+                ) => (
+                  <li key={index}>
+                    <Link href={"/blogs/" + item.slug} className="primaryText">
+                      {item.frontmatter.title}
+                    </Link>
+                    <p className="secondaryText">{item.frontmatter.date}</p>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
         </div>
-      </div>
-      {/* <div className={styles.blogs}>
+        {/* <div className={styles.blogs}>
         <h2>Tags(1)</h2>
         <div className={styles.posts}>
           <ul>
@@ -48,7 +51,8 @@ export default function Blogs(props: any) {
           </ul>
         </div>
       </div> */}
-    </section>
+      </section>
+    </>
   );
 }
 export async function getStaticProps() {
