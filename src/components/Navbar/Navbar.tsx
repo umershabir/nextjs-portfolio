@@ -8,7 +8,6 @@ export default function Navbar() {
   // const [theme, setTheme] = useState("Dark");
   const pathname = usePathname();
   const { themeUpdate, theme } = useContext(Context);
-  themeUpdate();
   return (
     <nav className={styles.nav}>
       <div className={styles.title}>
