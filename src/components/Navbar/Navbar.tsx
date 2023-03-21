@@ -3,12 +3,11 @@ import styles from "./Navbar.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
-import { ContextConsumer } from "../ContextAPI";
+import { ContextConsumer, Context } from "../ContextAPI";
 export default function Navbar() {
   // const [theme, setTheme] = useState("Dark");
   const pathname = usePathname();
-  const { themeUpdate, theme }: { themeUpdate: any; theme: string } =
-    useContext(ContextConsumer);
+  const { themeUpdate, theme } = useContext(Context);
   themeUpdate();
   return (
     <nav className={styles.nav}>
