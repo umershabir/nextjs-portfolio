@@ -7,7 +7,7 @@ import CodeBlock from "@/components/CodeBlock";
 import Image from "next/image";
 import styles from "../../styles/Blogs.module.scss";
 import Link from "next/link";
-import authorImage from "../../../public/author.jpg";
+import authorImage from "/public/author.jpg";
 // post page
 export default function PostPage(props: any) {
   return (
