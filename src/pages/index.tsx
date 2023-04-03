@@ -1,12 +1,10 @@
-import { useEffect } from "react";
 import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { useContext } from "react";
-import { ContextProvider, ContextConsumer } from "@/components/ContextAPI";
+
 export default function Home(props: any) {
   // console.log(data);
   return (
@@ -35,22 +33,30 @@ export default function Home(props: any) {
           </div>
           <div className={styles.posts}>
             <ul>
-              {props.posts.map(
-                (
-                  item: {
-                    slug: string;
-                    frontmatter: { title: string; date: string };
-                  },
-                  index: number
-                ) => (
-                  <li key={index}>
-                    <Link href={"/blogs/" + item.slug} className="primaryText">
-                      {item.frontmatter.title}
-                    </Link>
-                    <p className="secondaryText">{item.frontmatter.date}</p>
-                  </li>
+              {props.posts
+                .sort(
+                  (a: any, b: any) =>
+                    parseInt(a.frontmatter.date) - parseInt(b.frontmatter.date)
                 )
-              )}
+                .map(
+                  (
+                    item: {
+                      slug: string;
+                      frontmatter: { title: string; date: string };
+                    },
+                    index: number
+                  ) => (
+                    <li key={index}>
+                      <Link
+                        href={"/blogs/" + item.slug}
+                        className="primaryText"
+                      >
+                        {item.frontmatter.title}
+                      </Link>
+                      <p className="secondaryText">{item.frontmatter.date}</p>
+                    </li>
+                  )
+                )}
             </ul>
           </div>
         </section>

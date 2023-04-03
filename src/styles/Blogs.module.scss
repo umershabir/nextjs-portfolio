@@ -4,6 +4,7 @@
   grid-template-columns: 1fr, 1fr;
   margin: 4rem 0;
 }
+
 .posts {
   margin: 2rem 0;
   ul {
@@ -18,12 +19,30 @@
 .postLink {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-start;
 }
 .postIntro {
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
+  .author {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0;
+    small {
+      margin-left: 10px;
+      a {
+        color: #754ec1;
+      }
+    }
+    img {
+      margin: unset;
+    }
+  }
+  small {
+    margin: 5px 0;
+  }
   img {
     margin: 0 auto;
   }

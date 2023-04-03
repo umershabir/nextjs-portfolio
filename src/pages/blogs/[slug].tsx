@@ -7,6 +7,7 @@ import CodeBlock from "@/components/CodeBlock";
 import Image from "next/image";
 import styles from "../../styles/Blogs.module.scss";
 import Link from "next/link";
+import authorImage from "../../../public/author.jpg";
 // post page
 export default function PostPage(props: any) {
   return (
@@ -19,15 +20,31 @@ export default function PostPage(props: any) {
           {"<-back"}
         </Link>
         <div className={styles.postIntro}>
+          <h2>{props.frontmatter.title}</h2>
+          <div className={styles.author}>
+            <Image
+              src={authorImage}
+              alt="author-image"
+              width={50}
+              height={50}
+              style={{ borderRadius: 50 }}
+            />
+            <small>
+              by <Link href={"/"}>Umer Shabir</Link>
+            </small>
+          </div>
+          <small>{props.frontmatter.date}</small>
+          <small>{props.frontmatter.tags}</small>
           <Image
             src={props.frontmatter.cover_image}
             alt="blog-image"
             width={500}
             height={250}
           />
-          <h1>{props.frontmatter.title}</h1>
-          <small>{props.frontmatter.date}</small>
-          <small>{props.frontmatter.tags}</small>
+          <span>
+            <h3>Introduction</h3>
+            <p className="text2">{props.frontmatter.description}</p>
+          </span>
         </div>
         <ReactMarkdown components={CodeBlock}>{props.content}</ReactMarkdown>
       </div>

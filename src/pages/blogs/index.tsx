@@ -18,22 +18,30 @@ export default function Blogs(props: any) {
           <h2>Blogs</h2>
           <div className={styles.posts}>
             <ul>
-              {props.posts.map(
-                (
-                  item: {
-                    slug: string;
-                    frontmatter: { title: string; date: string };
-                  },
-                  index: number
-                ) => (
-                  <li key={index}>
-                    <Link href={"/blogs/" + item.slug} className="primaryText">
-                      {item.frontmatter.title}
-                    </Link>
-                    <p className="secondaryText">{item.frontmatter.date}</p>
-                  </li>
+              {props.posts
+                .sort(
+                  (a: any, b: any) =>
+                    parseInt(a.frontmatter.date) - parseInt(b.frontmatter.date)
                 )
-              )}
+                .map(
+                  (
+                    item: {
+                      slug: string;
+                      frontmatter: { title: string; date: string };
+                    },
+                    index: number
+                  ) => (
+                    <li key={index}>
+                      <Link
+                        href={"/blogs/" + item.slug}
+                        className="primaryText"
+                      >
+                        {item.frontmatter.title}
+                      </Link>
+                      <p className="secondaryText">{item.frontmatter.date}</p>
+                    </li>
+                  )
+                )}
             </ul>
           </div>
         </div>
