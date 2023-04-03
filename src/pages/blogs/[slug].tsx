@@ -7,7 +7,7 @@ import CodeBlock from "@/components/CodeBlock";
 import Image from "next/image";
 import styles from "../../styles/Blogs.module.scss";
 import Link from "next/link";
-import authorImage from "/author.jpg";
+import authorImage from "public/author.jpg";
 // post page
 export default function PostPage(props: any) {
   console.log(authorImage);
@@ -23,12 +23,10 @@ export default function PostPage(props: any) {
         <div className={styles.postIntro}>
           <h2>{props.frontmatter.title}</h2>
           <div className={styles.author}>
-            <Image
+            <img
               src={authorImage.src}
               alt="author-image"
-              width={50}
-              height={50}
-              style={{ borderRadius: 50 }}
+              style={{ borderRadius: 50, width: 50, height: 50 }}
             />
             <small>
               by <Link href={"/"}>Umer Shabir</Link>
