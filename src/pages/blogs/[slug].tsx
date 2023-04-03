@@ -23,7 +23,7 @@ export default function PostPage(props: any) {
           <h2>{props.frontmatter.title}</h2>
           <div className={styles.author}>
             <Image
-              src={authorImage}
+              src={"/" + authorImage.src}
               alt="author-image"
               width={50}
               height={50}
