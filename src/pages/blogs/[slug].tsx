@@ -14,7 +14,7 @@ export default function PostPage(props: any) {
   return (
     <>
       <Head>
-        <title>{props.slug}</title>
+        <title>{props.frontmatter.title}</title>
       </Head>
       <div className={styles.postPage}>
         <Link href="/blogs" className={styles.postLink}>
@@ -24,7 +24,7 @@ export default function PostPage(props: any) {
           <h2>{props.frontmatter.title}</h2>
           <div className={styles.author}>
             <img
-              src={"/author.jpg"}
+              src={props.frontmatter.authorImage}
               alt="author-image"
               style={{ borderRadius: 50, width: 50, height: 50 }}
             />
@@ -32,7 +32,10 @@ export default function PostPage(props: any) {
               by <Link href={"/"}>Umer Shabir</Link>
             </small>
           </div>
-          <small>{props.frontmatter.date}</small>
+          <small>
+            Published on {props.frontmatter.date} . Updated on{" "}
+            {props.frontmatter.updated}
+          </small>
           <small>{props.frontmatter.tags}</small>
           <Image
             src={props.frontmatter.cover_image}
