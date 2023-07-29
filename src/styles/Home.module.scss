@@ -4,9 +4,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 3rem 0;
 }
 .videoBtn {
-  color: #754ec1;
+  margin-top: 2rem;
+  button {
+    color: #754ec1;
+  }
   font-size: 1.25rem;
   cursor: pointer;
   &:hover {

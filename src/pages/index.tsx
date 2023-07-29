@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import Link from "next/link";
@@ -7,6 +8,7 @@ import matter from "gray-matter";
 
 export default function Home(props: any) {
   // console.log(data);
+  const [show, setShow] = useState(false);
   return (
     <>
       <Head>
@@ -18,11 +20,34 @@ export default function Home(props: any) {
       <main className={""}>
         <section className={styles.intro}>
           <h2>Hey!</h2>
-          <p className="primaryText">
-            I&apos;m Umer, JavaScript developer at Terafort based in Pakistan. I
-            work to bring life into ideas. Let&apos;s make something great.{" "}
-            <span className={styles.videoBtn}>see video description</span>
-          </p>
+          {show ? (
+            <p className="primaryText">
+              I&apos;m Umer, JavaScript developer at Terafort based in Pakistan.
+              I work to bring life into ideas. Let&apos;s make something great.{" "}
+              <span className={styles.videoBtn}>
+                <button onClick={() => setShow(false)}>
+                  see video description
+                </button>
+              </span>
+            </p>
+          ) : (
+            <>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/aw7K4H6tt-g"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                frameBorder={0}
+                allowFullScreen
+              ></iframe>
+              <span className={styles.videoBtn}>
+                <button onClick={() => setShow(true)}>
+                  close video description
+                </button>
+              </span>
+            </>
+          )}
         </section>
         <section className={styles.latest}>
           <div className={styles.heading}>
