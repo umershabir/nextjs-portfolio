@@ -5,6 +5,7 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Experiences from "@/views/Experiences";
 
 export default function Home(props: any) {
   // console.log(data);
@@ -20,36 +21,13 @@ export default function Home(props: any) {
       <main className={""}>
         <section className={styles.intro}>
           <h2>Hey!</h2>
-          {/* {show ? ( */}
           <p className="primaryText">
             I&apos;m Umer, JavaScript developer at Terafort based in Pakistan. I
             work to bring life into ideas. Let&apos;s make something great.{" "}
-            {/* <span className={styles.videoBtn}>
-                <button onClick={() => setShow(false)}>
-                  see video description
-                </button>
-              </span> */}
           </p>
-          {/* // ) : ( */}
-          {/* //   <> */}
-          {/* //     <iframe */}
-          {/* //       width="560"
-          //       height="315"
-          //       src="https://www.youtube.com/embed/aw7K4H6tt-g"
-          //       title="YouTube video player"
-          //       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          //       frameBorder={0}
-          //       allowFullScreen
-          //     ></iframe>
-          //     <span className={styles.videoBtn}>
-          //       <button onClick={() => setShow(true)}>
-          //         close video description
-          //       </button>
-          //     </span>
-          //   </>
-          // )} */}
         </section>
-        <section className={styles.latest}>
+        <Experiences />
+        {/* <section className={styles.latest}>
           <div className={styles.heading}>
             <h3>Latest Blogs</h3>
             <Link href="/blogs" className="secondaryText">
@@ -84,41 +62,14 @@ export default function Home(props: any) {
                 )}
             </ul>
           </div>
-        </section>
-        <section className={styles.latest}>
-          <div className={styles.heading}>
-            <h3>Latest Projects</h3>
-            <Link href="/projects" className="secondaryText">
-              see all{" "}
-            </Link>
-          </div>
-          <div className={styles.posts}>
-            <ul>
-              {props.projects.map(
-                (
-                  item: { slug: string; frontmatter: { title: string } },
-                  index: number
-                ) => (
-                  <li key={index}>
-                    <Link
-                      href={"/projects/" + item.slug}
-                      className="primaryText"
-                    >
-                      {item.frontmatter.title}
-                    </Link>
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-        </section>
+        </section> */}
       </main>
     </>
   );
 }
+// getting static props
 export async function getStaticProps() {
   const postFiles = fs.readdirSync(path.join("src", "posts"));
-  const projectFiles = fs.readdirSync(path.join("src", "projects"));
   const posts = postFiles.map((filename) => {
     const slug = filename.replace(".md", "");
     const markdownWithMeta = fs.readFileSync(
@@ -131,22 +82,10 @@ export async function getStaticProps() {
       frontmatter,
     };
   });
-  const projects = projectFiles.map((filename) => {
-    const slug = filename.replace(".md", "");
-    const markdownWithMeta = fs.readFileSync(
-      path.join("src", "projects", filename),
-      "utf-8"
-    );
-    const { data: frontmatter } = matter(markdownWithMeta);
-    return {
-      slug,
-      frontmatter,
-    };
-  });
+
   return {
     props: {
       posts: posts,
-      projects: projects,
     },
   };
 }

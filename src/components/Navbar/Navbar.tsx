@@ -34,12 +34,12 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link
+            {/* <Link
               href={"/projects"}
               className={pathname.match(/projects/) ? styles.active : undefined}
             >
               Projects
-            </Link>
+            </Link> */}
           </li>
         </ul>
         <ul>
@@ -55,7 +55,7 @@ export default function Navbar() {
           </li>
           <li>
             <a
-              href="https://www.youtube.com/channel/UCtnIzSE5BDjABTqmvpbgPCQ"
+              href="https://www.youtube.com/channel/UCz0rlgMITw0J6B53ImeGSQQ"
               target={"_blank"}
             >
               Youtube

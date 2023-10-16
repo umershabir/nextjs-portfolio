@@ -4,7 +4,7 @@ file: main app file
 // dependencies
 import { useState } from "react";
 import { Inter } from "next/font/google";
-import "@/styles/style.scss";
+import "@/styles/index.scss";
 import Container from "@/components/Container";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
