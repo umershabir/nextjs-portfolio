@@ -31,7 +31,7 @@ export default function Experiences() {
                 ))}
               </ul>
               <ul className={styles.technologiesContainer}>
-                <p>Technologies: </p>
+                <p>Technologies/Skills: </p>
                 {job.technologies.map((tech, indx) => (
                   <li key={indx} className={styles.skillItem}>
                     {tech},
