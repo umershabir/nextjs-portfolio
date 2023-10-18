@@ -20,10 +20,10 @@ export default function Home(props: any) {
       </Head>
       <main className={""}>
         <section className={styles.intro}>
-          <video autoPlay>
+          {/* <video autoPlay loop controls>
             <source src={introVideo} type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
         </section>
         <Experiences />
         {/* <section className={styles.latest}>
