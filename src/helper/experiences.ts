@@ -53,10 +53,8 @@ export const experiences = [
     dateOfJoining: "November 2021",
     dateOfLeaving: "March 2022",
     achievments: [
-      "Rebuilt the React-based front-end application in Next js, and Tailwind CSS",
-      "Learned The difference between programming and Engineering",
-      "Value of time",
-      "Punctuality",
+      "Rebuilt the React-based front-end application in Next js, and Tailwind CSS.",
+      "Learned The difference between programming and Engineering.",
     ],
     technologies: [
       "React.js",
@@ -66,6 +64,8 @@ export const experiences = [
       "CSS",
       "JavaScript",
       "Media Queries",
+      "Punctuality",
+      "Value of time",
     ],
   },
   {

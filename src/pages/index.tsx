@@ -6,10 +6,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Experiences from "@/views/Experiences";
+import introVideo from "../intro.mp4";
 
 export default function Home(props: any) {
-  // console.log(data);
-  const [show, setShow] = useState(false);
+  console.log(introVideo);
   return (
     <>
       <Head>
@@ -20,11 +20,10 @@ export default function Home(props: any) {
       </Head>
       <main className={""}>
         <section className={styles.intro}>
-          <h2>Hey!</h2>
-          <p className="primaryText">
-            I&apos;m Umer, JavaScript developer at Terafort based in Pakistan. I
-            work to bring life into ideas. Let&apos;s make something great.{" "}
-          </p>
+          <video autoPlay>
+            <source src={introVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </section>
         <Experiences />
         {/* <section className={styles.latest}>
