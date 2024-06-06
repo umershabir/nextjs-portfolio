@@ -29,42 +29,6 @@ export default function Home(props: any) {
           </video> */}
         </section>
         <Experiences />
-        {/* <section className={styles.latest}>
-          <div className={styles.heading}>
-            <h3>Latest Blogs</h3>
-            <Link href="/blogs" className="secondaryText">
-              see all{" "}
-            </Link>
-          </div>
-          <div className={styles.posts}>
-            <ul>
-              {props.posts
-                .sort(
-                  (a: any, b: any) =>
-                    parseInt(a.frontmatter.date) - parseInt(b.frontmatter.date)
-                )
-                .map(
-                  (
-                    item: {
-                      slug: string;
-                      frontmatter: { title: string; date: string };
-                    },
-                    index: number
-                  ) => (
-                    <li key={index}>
-                      <Link
-                        href={"/blogs/" + item.slug}
-                        className="primaryText"
-                      >
-                        {item.frontmatter.title}
-                      </Link>
-                      <p className="secondaryText">{item.frontmatter.date}</p>
-                    </li>
-                  )
-                )}
-            </ul>
-          </div>
-        </section> */}
       </main>
     </>
   );
