@@ -21,7 +21,8 @@ export default function Home(props: any) {
       <main className={""}>
         <section className={styles.intro}>
           <h1>UMER SHABIR</h1>
-          <p>Frontend developer</p>
+          <p>Full stack developer</p>
+          <p>Python, Node, React</p>
           {/* <video autoPlay loop controls>
             <source src={introVideo} type="video/mp4" />
             Your browser does not support the video tag.
