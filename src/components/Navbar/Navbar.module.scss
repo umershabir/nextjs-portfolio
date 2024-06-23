@@ -1,26 +1,17 @@
-@font-face {
-    font-family: 'Segoe';
-    src: url('../../assets/fonts/segoe.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-}
+
 .nav {
   display: flex;
   flex-direction: column;
   position: relative;
+  justify-content: center;
+  align-items: center;
   h1 {
     font-family: "Segoe";
+    font-weight: 100;
+    color: #777;
   }
   // border-bottom: 1px solid #cbd5e0;
-  &::after {
-    content:'';
-    position: absolute;
-    height: 1px;
-    background-color:  #cbd5e0;
-    width: 200px;
-    left: 0;
-    bottom: 0;
-  }
+  
   .title,
   .navLinks {
     display: flex;
@@ -45,5 +36,44 @@
         }
       }
     }
+  }
+}
+
+
+.introSec {
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+&::after {
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color:  #cbd5e0;
+    width: 200px;
+    left: 38%;
+    bottom: 0;
+    // transform: translate(-40% 50%);
+  }
+}
+.authAvatar {
+  border-radius: 50%;
+  filter: grayscale(1);
+  background-color: gray;
+}
+.authName {
+  margin: 0;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: rgba( 35, 28, 51 , 0.66);
+}
+.infoText {
+  font-size: 1.1rem;
+  color: rgba(35, 28, 51, 0.66);
+  font-weight: 100;
+  text-align: center;
+  a {
+    text-decoration: underline;
   }
 }

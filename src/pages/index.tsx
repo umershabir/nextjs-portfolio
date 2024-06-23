@@ -6,10 +6,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Experiences from "@/views/Experiences";
-import introVideo from "../intro.mp4";
 
 export default function Home(props: any) {
-  console.log(introVideo);
   return (
     <>
       <Head>
@@ -20,15 +18,15 @@ export default function Home(props: any) {
       </Head>
       <main className={""}>
         <section className={styles.intro}>
-          <h1>UMER SHABIR</h1>
+          {/* <h1>UMER SHABIR</h1>
           <p style={{ marginBottom: 0 }}>Full stack developer</p>
-          <p style={{ marginTop: 0 }}>Python, Node, React</p>
-          {/* <video autoPlay loop controls>
-            <source src={introVideo} type="video/mp4" />
+          <p style={{ marginTop: 0 }}>Python, Node, React</p> */}
+          <video autoPlay loop controls>
+            <source src={"/"} type="video/mp4" />
             Your browser does not support the video tag.
-          </video> */}
+          </video>
         </section>
-        <Experiences />
+        {/* <Experiences /> */}
       </main>
     </>
   );

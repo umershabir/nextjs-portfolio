@@ -1,5 +1,5 @@
 const wrapper = {
-  maxWidth: 1024,
+  maxWidth: "50rem",
   display: "flex",
   flexDirection: "column",
   margin: "0 auto",
