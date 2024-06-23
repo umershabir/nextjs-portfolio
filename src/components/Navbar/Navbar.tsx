@@ -10,7 +10,8 @@ export default function Navbar() {
   const { themeUpdate, theme } = useContext(Context);
   return (
     <nav className={styles.nav}>
-      <div className={styles.title}>
+      <h1>UMER SHABIR</h1>
+      {/* <div className={styles.title}>
         <Link
           href={"/"}
           style={{
@@ -32,16 +33,16 @@ export default function Navbar() {
             >
               Blogs
             </Link>
-          </li>
-          <li>
-            {/* <Link
+          </li> */}
+      {/* <li> */}
+      {/* <Link
               href={"/projects"}
               className={pathname.match(/projects/) ? styles.active : undefined}
             >
               Projects
             </Link> */}
-          </li>
-        </ul>
+      {/* </li> */}
+      {/* </ul>
         <ul>
           <li>
             <a href="https://www.linkedin.com/in/umershabir/" target={"_blank"}>
@@ -60,14 +61,14 @@ export default function Navbar() {
             >
               Youtube
             </a>
-          </li>
-        </ul>
-      </div>
-      <style jsx>{`
-        .active {
-          color: #000 !important;
-        }
-      `}</style>
+          </li> */}
+      {/* </ul> */}
+      {/* // </div> */}
+      {/* // <style jsx>{`
+      //   .active {
+      //     color: #000 !important;
+      //   }
+      // `}</style> */}
     </nav>
   );
 }

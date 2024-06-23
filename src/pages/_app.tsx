@@ -12,11 +12,11 @@ import type { AppProps } from "next/app";
 import { ContextProvider } from "@/components/ContextAPI";
 // creating context for theming,
 // definig web font in next js for prerendering
-const inter = Inter({
-  weight: ["400", "500", "600", "700"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
+// const inter = Inter({
+//   weight: ["400", "500", "600", "700"],
+//   style: ["normal"],
+//   subsets: ["latin"],
+// });
 // main app component
 export default function App({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState<string>("Dark");
@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <style jsx global>{`
         html {
-          font-family: ${inter.style.fontFamily};
+          font-family: "Segoe";
           font-weight: 400;
           background-color: ${theme == "Light" ? "#1A202C" : "#fff"};
           color: ${theme == "Light" ? "#fff" : "#000"} !important;

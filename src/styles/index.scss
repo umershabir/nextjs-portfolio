@@ -1,4 +1,13 @@
 @import "./_variables.scss";
+@font-face {
+    font-family: 'Segoe';
+    src: url('../assets/fonts/segoe.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  font-family: "Segoe";
+}
 h2 {
   font-size: 2.5rem;
   font-weight: 700;

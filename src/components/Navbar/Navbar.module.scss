@@ -1,7 +1,26 @@
+@font-face {
+    font-family: 'Segoe';
+    src: url('../../assets/fonts/segoe.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 .nav {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #cbd5e0;
+  position: relative;
+  h1 {
+    font-family: "Segoe";
+  }
+  // border-bottom: 1px solid #cbd5e0;
+  &::after {
+    content:'';
+    position: absolute;
+    height: 1px;
+    background-color:  #cbd5e0;
+    width: 200px;
+    left: 0;
+    bottom: 0;
+  }
   .title,
   .navLinks {
     display: flex;
