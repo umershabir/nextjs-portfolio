@@ -1,0 +1,86 @@
+@import "./variables";
+// Breakpoint variables
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 1024px;
+$mini-laptop-breakpoint: 1200px;
+$desktop-breakpoint: 1440px;
+$breakpoints: (
+  "mobile": 480px,
+  "tablet": 768px,
+  "mini-laptop": 1024px,
+  "desktop": 1200px,
+);
+
+// Mixins for responsive design
+@mixin mobile {
+  @media (max-width: #{$mobile-breakpoint - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile-breakpoint}) and (max-width: #{$tablet-breakpoint - 1}) {
+    @content;
+  }
+}
+
+@mixin mini-laptop {
+  @media (min-width: #{$tablet-breakpoint}) and (max-width: #{$mini-laptop-breakpoint - 1}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$mini-laptop-breakpoint}) and (max-width: #{$desktop-breakpoint - 1}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: #{$desktop-breakpoint}) {
+    @content;
+  }
+}
+
+// Additional useful mixins
+
+@mixin tablet-and-up {
+  @media (min-width: #{$mobile-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin mini-laptop-and-up {
+  @media (min-width: #{$tablet-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin desktop-and-up {
+  @media (min-width: #{$mini-laptop-breakpoint}) {
+    @content;
+  }
+}
+@mixin responsive-text($size) {
+  @each $breakpoint, $sizes in $text-sizes {
+    @if $breakpoint == "desktop" {
+      font-size: map-get($sizes, $size);
+    } @else {
+      @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+        font-size: map-get($sizes, $size);
+      }
+    }
+  }
+}
+
+@mixin responsive-heading($level) {
+  @each $breakpoint, $sizes in $heading-sizes {
+    @if $breakpoint == "desktop" {
+      font-size: map-get($sizes, $level);
+    } @else {
+      @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+        font-size: map-get($sizes, $level);
+      }
+    }
+  }
+}

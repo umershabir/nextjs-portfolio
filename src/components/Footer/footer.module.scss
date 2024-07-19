@@ -1,8 +1,13 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid $divider;
   padding-top: 1rem;
+  @include mobile {
+    flex-direction: column;
+    align-items: start;
+  }
 }

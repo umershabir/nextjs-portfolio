@@ -22,27 +22,27 @@ export default function PostPage(props: any) {
         </Link>
         <div className={styles.postIntro}>
           <h2>{props.frontmatter.title}</h2>
-          <div className={styles.author}>
+          {/* <div className={styles.author}>
             <img
-              src={props.frontmatter.authorImage}
+              src={props.frontmatter.author_image}
               alt="author-image"
               style={{ borderRadius: 50, width: 50, height: 50 }}
             />
             <small>
               by <Link href={"/"}>Umer Shabir</Link>
             </small>
-          </div>
+          </div> */}
           <small>
-            Published on {props.frontmatter.date} . Updated on{" "}
+            Published on {props.frontmatter.date}
             {props.frontmatter.updated}
           </small>
           <small>{props.frontmatter.tags}</small>
-          <Image
+          {/* <Image
             src={props.frontmatter.cover_image}
             alt="blog-image"
             width={500}
             height={250}
-          />
+          /> */}
           <span>
             <h3>Introduction</h3>
             <p className="text2">{props.frontmatter.description}</p>
@@ -77,6 +77,7 @@ export async function getStaticProps({
     "utf-8"
   );
   const { data: frontmatter, content } = matter(markdownWithMeta);
+  console.log(frontmatter);
   return {
     props: {
       frontmatter,

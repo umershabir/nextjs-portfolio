@@ -1,9 +1,10 @@
 ---
 title: "A Little Tale"
 date: "08-08-2022"
-tags: "meaningfulness"
+tags: "#meaningfulness"
 description: "A story you have never heard."
-cover_image: "/images/posts/a-little-tale.jpg"
+cover_image: "/posts/a-little-tale.jpg"
+author_image: "/author.png"
 ---
 
 This is a little tale of Zachariah's son Yahya (John) (Peace and blessings) who was the companion of Jesus. I read this in Qasasul Ambia (Stories of Prophets) about 2 years ago. After reading, I spent some time pondering on this and discovered some of the valuable things which I want to share in this blog.

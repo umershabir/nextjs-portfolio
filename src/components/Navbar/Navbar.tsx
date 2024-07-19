@@ -37,17 +37,19 @@ export default function Navbar() {
             </a>{" "}
             <a
               href="https://www.youtube.com/channel/UCz0rlgMITw0J6B53ImeGSQQ"
-              target={"_blank"}>
+              target={"_blank"}
+            >
               Youtube
             </a>
           </div>
           <div>
             <Link
               href={"/blogs"}
-              className={pathname.match(/blogs/) ? styles.active : undefined}>
+              className={pathname.match(/blogs/) ? styles.active : undefined}
+            >
               Blogs
             </Link>{" "}
-            <a href="https://www.linkedin.com/in/umershabir/">Resume</a>
+            {/* <a href="https://www.linkedin.com/in/umershabir/">Resume</a> */}
           </div>
           {/* <button onClick={() => themeUpdate()}>{theme}</button> */}
         </p>
