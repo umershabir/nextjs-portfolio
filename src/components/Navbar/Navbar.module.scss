@@ -1,3 +1,4 @@
+@import "../../styles/mixins";
 .nav {
   display: flex;
   flex-direction: column;
@@ -51,6 +52,9 @@
     width: 200px;
     left: 38%;
     bottom: 0;
+    @include mobile {
+      left: 20%;
+    }
     // transform: translate(-40% 50%);
   }
 }
